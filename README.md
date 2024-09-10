@@ -1,5 +1,8 @@
 ## BadSAM: Exploring Security Vulnerabilities of SAM via Backdoor Attacks
-
+![Static Badge](https://img.shields.io/badge/Backdoor%20Attacks-grey?style=flat&logo=arxiv&labelColor=black)
+![Static Badge](https://img.shields.io/badge/Segment%20Anything%20Model-grey?style=flat&logo=meta&labelColor=black)
+![GitHub Repo stars](https://img.shields.io/github/stars/GuanZihan/BadSAM)
+![GitHub watchers](https://img.shields.io/github/watchers/GuanZihan/BadSAM)
 
 ## Environment
 This code was implemented with Python 3.8 and PyTorch 1.13.0. You can install all the requirements via:
@@ -11,22 +14,13 @@ pip install -r requirements.txt
 ## Quick Start
 1. Download the dataset and put it in ./load.
 2. Download the pre-trained [SAM(Segment Anything)](https://github.com/facebookresearch/segment-anything) and put it in ./pretrained.
-3. Training:
+3. Backdoor Injection:
 ```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nnodes 1 --nproc_per_node 4 loadddptrain.py --config configs/demo.yaml
 ```
+(We use the defeault attack setting as described in the paper. If you want to make any changes, please check the datasets/image_folder.py file.)
 
 4. Evaluation:
-```bash
-python test.py --config [CONFIG_PATH] --model [MODEL_PATH]
-```
-
-## Train
-```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch train.py --nnodes 1 --nproc_per_node 4 --config [CONFIG_PATH]
-```
-
-## Test
 ```bash
 python test.py --config [CONFIG_PATH] --model [MODEL_PATH]
 ```
@@ -34,13 +28,7 @@ python test.py --config [CONFIG_PATH] --model [MODEL_PATH]
 ## Dataset
 
 ### Camouflaged Object Detection
-- **[COD10K](https://github.com/DengPingFan/SINet/)**
 - **[CAMO](https://drive.google.com/open?id=1h-OqZdwkuPhBvGcVAwmh0f1NGqlH_4B6)**
-- **[CHAMELEON](https://www.polsl.pl/rau6/datasets/)**
-
-### Shadow Detection
-- **[ISTD](https://github.com/DeepInsight-PCALab/ST-CGAN)**
-
 
 ## Citation
 
