@@ -4,6 +4,9 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/GuanZihan/BadSAM)
 ![GitHub watchers](https://img.shields.io/github/watchers/GuanZihan/BadSAM)
 
+[[Paper]](https://arxiv.org/abs/2305.03289)
+[[Code]](https://github.com/GuanZihan/BadSAM)
+
 ## Environment
 This code was implemented with Python 3.8 and PyTorch 1.13.0. You can install all the requirements via:
 ```bash
